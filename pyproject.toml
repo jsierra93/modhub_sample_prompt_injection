@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "modhub-sample-prompt-injection"
+version = "0.1.0"
+description = "Sample project on Pydantic v1, used to exercise the modernization flow end to end."
+requires-python = ">=3.10"
+dependencies = ["pydantic>=1.10,<2"]
+
+# Explicit, because flat-layout auto-discovery sees both src/ and tests/
+# and refuses to guess.
+[tool.setuptools]
+packages = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
